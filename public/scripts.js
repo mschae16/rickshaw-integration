@@ -9,10 +9,10 @@ const loadData = () => {
     .then(response => response.json())
     .then(parsedResponse => {
       const unpackData = (array, key) => {
-        return array.map(obj => Object.assign({}, { x: Date.parse(obj['time']), y: obj[key] })).sort((a, b) => a.x - b.x)
+        return array.map(obj => Object.assign({}, { x: Date.parse(obj['time']), y: obj[key] }))
       };
-      
-      const palette = new Rickshaw.Color.Palette();
+
+      const palette = new Rickshaw.Color.Palette({ scheme: 'colorwheel' });
       const graph = new Rickshaw.Graph({
         element: document.querySelector('#chart'),
         width: 1200,
@@ -32,12 +32,9 @@ const loadData = () => {
         ]
       });
 
-      const time = new Rickshaw.Fixtures.Time();
-      const hours = time.unit('hour');
       const xAxis = new Rickshaw.Graph.Axis.Time({
         graph: graph,
-        timeUnit: hours,
-        timeFixture: new Rickshaw.Fixtures.Time()
+        ticksTreatment: 'glow'
       });
 
       const yAxis = new Rickshaw.Graph.Axis.Y({
@@ -50,9 +47,7 @@ const loadData = () => {
         element: document.getElementById('legend'),
         graph: graph
       });
-
       const offsetForm = document.getElementById('offset-form');
-
       offsetForm.addEventListener('change', function(e) {
         const offsetMode = e.target.value;
 
@@ -71,4 +66,4 @@ const loadData = () => {
     .catch( error => console.log(error) );
 }
 
-$(window).on('load', loadData);
+document.addEventListener('DOMContentLoaded', loadData);

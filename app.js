@@ -29,8 +29,21 @@ app.get('/api/v1/usage', (request, response) => {
     where time > now() - 1h and
     host = 'Margos-MBP.attlocal.net'
     group by time(10s)
-    order by time desc
-    limit 200
+    limit 100
+    `)
+    .then(result => response.status(200).json(result))
+    .catch(error => response.status(500).json({ error }));
+});
+
+app.get('/api/v1/load_times', (request, response) => {
+  influx.query(`
+    select mean("load1") as "mean_load1",
+    mean("load15") as "mean_load15",
+    mean("load5") as "mean_load5" from system
+    where time > now() - 1h and
+    host = 'Margos-MBP.attlocal.net'
+    group by time(1m)
+    limit 100
     `)
     .then(result => response.status(200).json(result))
     .catch(error => response.status(500).json({ error }));

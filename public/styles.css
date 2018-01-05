@@ -39,9 +39,9 @@ main {
 #chart-container {
   display: flex;
   justify-content: center;
-  width: 75%;
+  width: 85%;
   margin: auto;
-  border: 2px solid #eaeaea;
+  border: 3px solid #eaeaea;
 }
 
 .chart-box {
