@@ -16,7 +16,7 @@ const loadData = () => {
       const graph = new Rickshaw.Graph({
         element: document.querySelector('#chart'),
         width: 1200,
-        height: 440,
+        height: 640,
         renderer: 'line',
         series: [
           {
