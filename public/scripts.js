@@ -7,7 +7,7 @@ const loadData = () => {
       return response;
     })
     .then(response => response.json())
-    .then(parsedResponse => {
+    .then(parsedResponse => {    
       const unpackData = (array, key) => {
         return array.map(obj => Object.assign({}, { x: Date.parse(obj['time']), y: obj[key] }))
       };
