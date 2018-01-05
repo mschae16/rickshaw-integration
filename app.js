@@ -27,7 +27,7 @@ app.get('/api/v1/usage', (request, response) => {
     select mean("usage_user") as "mean_usage_user",
     mean("usage_system") as "mean_usage_system" from cpu
     where time > now() - 1h and
-    host = ${Influx.escape.stringLit(os.hostname())}
+    host = 'Margos-MBP.attlocal.net'
     group by time(10s)
     order by time desc
     limit 200
