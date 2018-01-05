@@ -11,7 +11,7 @@ body {
   height: 100%;
   background: #f8f8f8;
   color: #666;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 header {
@@ -25,7 +25,8 @@ header {
 }
 
 .title {
-  font-size: 60px;
+  margin: 30px auto;
+  font-size: 40px;
 }
 
 main {
@@ -35,11 +36,41 @@ main {
   align-items: center;
 }
 
-.graphs-title {
-  margin: 30px auto;
+#chart-container {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  margin: auto;
+  border: 2px solid #eaeaea;
 }
 
-#graphs-container {
-  height: 60%;
-  width: 80%;
+.chart-box {
+  position: relative;
+}
+
+#y-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+}
+
+#chart {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.legend-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#legend {
+  vertical-align: top;
+  margin: 0 0 0 10px;
+}
+
+#offset-form {
+  margin: 2em 0 0 15px;
+  font-size: 13px;
 }

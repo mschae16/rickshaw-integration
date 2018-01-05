@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
     <link type="text/css" rel="stylesheet" type="text/css" href="styles.css">
     <link type="text/css" rel="stylesheet" href="rickshaw.min.css">
     <script src="d3.layout.min.js"></script>
@@ -17,8 +16,20 @@
       <h1 class="title">Visualizing Your Time Series Data from InfluxDB with Rickshaw</h1>
     </header>
     <main>
-      <div class="graphs-container">
-        <!-- Append graph here   -->
+      <div id="chart-container">
+        <div class="chart-box">
+          <div id="y-axis"></div>
+          <div id="chart"></div>
+        </div>
+        <div class="legend-box">
+          <div id="legend"></div>
+          <form id="offset-form" class="toggler">
+            <input type="radio" name="offset" id="lines" value="lines" checked>
+            <label class="lines" for="lines">lines</label><br>
+            <input type="radio" name="offset" id="stack" value="zero">
+            <label class="stack" for="stack">stack</label>
+          </form>
+        </div>
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
