@@ -41,12 +41,15 @@ main {
   justify-content: center;
   width: 85%;
   margin: auto;
+  padding: 10px;
+  background: #eaeaea;
   border: 3px solid #666;
 }
 
 .chart-box {
   position: relative;
   background: #eaeaea;
+  border: 1px solid #666;
 }
 
 #y-axis {
