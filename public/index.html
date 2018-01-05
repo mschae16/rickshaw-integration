@@ -4,21 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Visualizing Data from InfluxDB with Plotly</title>
+    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" type="text/css" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="rickshaw.min.css">
+    <script src="d3.layout.min.js"></script>
+    <script src="d3.min.js"></script>
+    <script src="rickshaw.min.js"></script>
+    <title>Visualizing Data from InfluxDB with Rickshaw</title>
   </head>
   <body>
     <header>
-      <h1 class="title">Visualizing Data from InfluxDB with Plotly.js, a JavaScript Graphing Library</h1>
+      <h1 class="title">Visualizing Your Time Series Data from InfluxDB with Rickshaw</h1>
     </header>
     <main>
-      <h2 class="graphs-title">My Time Series Graphs</h2>
-      <div id="graphs-container">
-        <!-- Append graph here -->
+      <div class="graphs-container">
+        <!-- Append graph here   -->
       </div>
     </main>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
